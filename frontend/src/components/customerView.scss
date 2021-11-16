@@ -26,6 +26,18 @@ table {
     border-collapse: collapse;
   
 }
+tbody tr {
+    cursor: pointer;
+    &:hover {
+        background-color:$main-content-hover;
+        :nth-child(4) > span {
+            border: 2px solid $theme-primary;
+        }
+        :nth-child(5) > svg { 
+            color: $theme-primary;
+        }
+    }
+}
 th {
     text-align:start;
     color: $theme-primary;
@@ -56,5 +68,6 @@ td {
 
 .arrow {
     text-align: end;
+    padding-right: 5px;
     color: $theme-secondary;
 }
