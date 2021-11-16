@@ -1,0 +1,82 @@
+@import "./variables";
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $primary-text;
+}
+
+main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+h1 {
+  color: $theme-primary;
+}
+
+input {
+  color: $primary-text;
+  letter-spacing: .7px;
+}
+
+nav {
+  padding: 35px;
+  border-bottom: 2px solid $grey;
+  ul{
+    width: 80%;
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+  }
+  a {
+    text-decoration: none;
+    font-weight: 500;
+    color: $secondary-text;
+    margin-right: 50px;
+    padding: 10px;
+    border-radius:10px;
+    border: 1px solid transparent;
+
+    &:hover {
+      background-color: #f5fdff;
+      border: 1px solid $theme-secondary;
+      color: $theme-primary;
+    }
+    
+  }
+  .active-tab {
+    background-color: #f5fdff;
+    border: 1px solid $theme-secondary;
+    color: $theme-primary;
+  }
+
+}
+
+
+
+// Font Sizing for different screen sizes
+@media screen and (min-width: 320px) {
+  html {
+    font-size: calc(14px + 6 * ((100vw - 320px) / 680));
+  }
+}
+@media screen and (min-width: 1000px) {
+  html {
+    font-size: 20px;
+  }
+}

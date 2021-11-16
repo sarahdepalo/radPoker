@@ -1,0 +1,60 @@
+@import "../variables";
+
+.search-bar {
+    width: 100%;
+    padding: 15px;
+    padding-left: 35px;
+    border-radius: 10px;
+    border: 2px solid $grey;
+    &::placeholder{
+        color: $placeholder-text;
+    }
+  
+}
+
+.search-icon {
+    position: absolute;
+    margin-top: 14px;
+    margin-left: 7px;
+    color: #bababb;
+}
+
+table {
+    margin-top: 30px;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+  
+}
+th {
+    text-align:start;
+    color: $theme-primary;
+    padding:20px 0px;
+}
+
+td {
+    border-bottom: 2px solid $grey;
+    padding: 20px 0px;
+    color: $secondary-text;
+}
+
+.active {
+    border: 2px solid $grey;
+    padding: 10px;
+    border-radius:10px;
+    &:before {
+        background-color: $success;
+        border-radius: 1em;
+        content: " ";
+        display: inline-block;
+        height: 0.45em;
+        margin-right: 6px;
+        width: 0.45em;
+        margin-bottom: 2px;
+    }
+}
+
+.arrow {
+    text-align: end;
+    color: $theme-secondary;
+}
