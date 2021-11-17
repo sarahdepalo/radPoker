@@ -1,119 +1,125 @@
 @import "../variables";
 
 .search-bar {
-    width: 100%;
-    padding: 15px;
-    padding-left: 35px;
-    border-radius: 10px;
-    border: 2px solid $grey;
-    &::placeholder{
-        color: $placeholder-text;
-    }
-  
+  width: 100%;
+  padding: 15px;
+  padding-left: 35px;
+  border-radius: 10px;
+  border: 2px solid $grey;
+  &::placeholder {
+    color: $placeholder-text;
+  }
 }
 
 .search-icon {
-    position: absolute;
-    margin-top: 14px;
-    margin-left: 7px;
-    color: #bababb;
+  position: absolute;
+  margin-top: 14px;
+  margin-left: 7px;
+  color: #bababb;
 }
 
 // TABLE STYLES
 
 table {
-    margin-top: 30px;
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
+  margin-top: 30px;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
 }
-
-tbody tr {
+.customer-list {
+  tbody tr {
     cursor: pointer;
     &:hover {
-        background-color:$main-content-hover;
-        :nth-child(4) > span {
-            border: 2px solid transparent;
-        }
-        :nth-child(5) > svg { 
-            color: $theme-primary;
-        }
+      background-color: $main-content-hover;
+      :nth-child(4) > span {
+        border: 2px solid transparent;
+      }
+      :nth-child(5) > svg {
+        color: $theme-primary;
+      }
     }
+  }
 }
+
 th {
-    text-align:start;
-    color: $theme-primary;
-    padding:20px 0px;
+  text-align: start;
+  color: $theme-primary;
+  padding: 20px 0px;
 }
 
 td {
-    border-bottom: 2px solid $grey;
-    padding: 20px 17px 20px 0px;
-    color: $secondary-text;
-    word-break: break-word;
+  border-bottom: 2px solid $grey;
+  padding: 20px 17px 20px 0px;
+  color: $secondary-text;
+  word-break: break-word;
 }
 
 .active {
-    border: 2px solid $grey;
-    padding: 10px;
-    border-radius:10px;
-    &:before {
-        background-color: $success;
-        border-radius: 1em;
-        content: " ";
-        display: inline-block;
-        height: 0.45em;
-        margin-right: 6px;
-        width: 0.45em;
-        margin-bottom: 2px;
-    }
+  border: 2px solid $grey;
+  padding: 10px;
+  border-radius: 10px;
+  &:before {
+    background-color: $success;
+    border-radius: 1em;
+    content: " ";
+    display: inline-block;
+    height: 0.45em;
+    margin-right: 6px;
+    width: 0.45em;
+    margin-bottom: 2px;
+  }
 }
 
 .offline {
-    border: 2px solid $grey;
-    padding: 10px;
-    border-radius:10px;
-    &:before {
-        background-color: $error;
-        border-radius: 1em;
-        content: " ";
-        display: inline-block;
-        height: 0.45em;
-        margin-right: 6px;
-        width: 0.45em;
-        margin-bottom: 2px;
-    }
+  border: 2px solid $grey;
+  padding: 10px;
+  border-radius: 10px;
+  &:before {
+    background-color: $error;
+    border-radius: 1em;
+    content: " ";
+    display: inline-block;
+    height: 0.45em;
+    margin-right: 6px;
+    width: 0.45em;
+    margin-bottom: 2px;
+  }
 }
 
 .arrow {
-    text-align: end;
-    padding-right: 5px;
-    color: $theme-secondary;
+  text-align: end;
+  padding-right: 5px;
+  color: $theme-secondary;
 }
 
 // MEDIA QUERIES
 @media screen and (max-width: 960px) {
-    table {
-        margin-top: 15px;
-    }
+  table {
+    margin-top: 15px;
+  }
 
-    table, thead, tbody, th, td, tr {
-        display: block;
-    }
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
 
-    thead tr {
-        position: absolute;
-        top: -9999px;
-		left: -9999px;
-    }
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
 
-    tbody tr {
-        margin-bottom: 20px;
+  tbody tr {
+    margin-bottom: 20px;
 
-        :nth-child(5){
-            position: absolute;
-            top: -9999px;
-            left: -9999px;
-        }
+    :nth-child(5) {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
     }
+  }
 }

@@ -9,6 +9,7 @@ import "./customerView.scss";
 
 const CustomerView = () => {
   const [customerList, setCustomerList] = useState(null);
+  const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
     const getData = async () => {
@@ -25,14 +26,20 @@ const CustomerView = () => {
   const navigate = useNavigate();
 
   const handleClick = (customerId) => {
-    navigate("customer-details", { state : customerId });
+    navigate("customer-details", { state: customerId });
   };
 
   const formatDate = (inputDate) => {
-    var date = new Date(inputDate);
+    let date = new Date(inputDate);
     if (!isNaN(date.getTime())) {
-        return date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear();
+      return (
+        date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear()
+      );
     }
+  };
+
+  const search = (event) => {
+    setSearchInput(event.target.value);
   };
 
   return (
@@ -53,11 +60,13 @@ const CustomerView = () => {
                 placeholder="Search for user..."
                 aria-label="Search bar"
                 className="search-bar"
+                value={searchInput}
+                onChange={(event) => search(event)}
               />
             </form>
           </div>
           <section>
-            <table>
+            <table className="customer-list">
               <thead>
                 <tr>
                   <th>Name</th>
@@ -68,25 +77,41 @@ const CustomerView = () => {
                 </tr>
               </thead>
               <tbody>
-                {customerList.map((customer) => (
-                  <tr onClick={() => handleClick(customer.id)} key={customer.email}>
-                    <td>
-                      {customer.first_name} {customer.last_name}
-                    </td>
-                    <td>{customer.email}</td>
-                    <td>{formatDate(customer.created_date)}</td>
-                    <td>
-                      <span
-                        className={customer.active === 1 ? "active" : "offline"}
-                      >
-                        {customer.active === 1 ? "Online" : "Offline"}
-                      </span>
-                    </td>
-                    <td className="arrow">
-                      <FontAwesomeIcon icon={faAngleDoubleRight} />
-                    </td>
-                  </tr>
-                ))}
+                {customerList
+                  .filter((val) => {
+                    if (searchInput === "") {
+                      return val;
+                    } else if (
+                      val.first_name
+                        .toLowerCase()
+                        .includes(searchInput.toLowerCase())){
+                        return val
+                    }
+                  })
+                  .map((customer) => (
+                    <tr
+                      onClick={() => handleClick(customer.id)}
+                      key={customer.email}
+                    >
+                      <td>
+                        {customer.first_name} {customer.last_name}
+                      </td>
+                      <td>{customer.email}</td>
+                      <td>{formatDate(customer.created_date)}</td>
+                      <td>
+                        <span
+                          className={
+                            customer.active === 1 ? "active" : "offline"
+                          }
+                        >
+                          {customer.active === 1 ? "Online" : "Offline"}
+                        </span>
+                      </td>
+                      <td className="arrow">
+                        <FontAwesomeIcon icon={faAngleDoubleRight} />
+                      </td>
+                    </tr>
+                  ))}
               </tbody>
             </table>
           </section>

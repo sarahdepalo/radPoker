@@ -1,39 +1,16 @@
 @import "../variables";
 
-.name-container {
-  h1 {
-    display: inline-block;
-    padding-right: 40px;
-    margin-top: 50px;
-  }
-}
-
-.customer-details {
-  width: 80%;
-  th {
-    width: 250px;
-    padding: 20px 15px 20px 0px;
-  }
-}
-
-.accounts {
-  margin-top: 50px;
-  margin-bottom: 70px;
-}
-
-// MEDIA QUERIES
-@media screen and (max-width: 960px) {
-    .name-container {
-        h1 {
-            display: block;
+.contests {
+    margin-bottom: 50px;
+    tbody  {
+        tr:nth-child(odd) {
+            background-color: $main-content-hover;
         }
     }
+}
 
-  .customer-details {
-    width: 100%;
-  }
-
-  .accounts {
+@media screen and (max-width: 960px) {
+  .contests {
      thead {
       border: none;
       clip: rect(0 0 0 0);

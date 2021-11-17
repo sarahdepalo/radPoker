@@ -93,16 +93,16 @@ const CustomerIndex = () => {
                     </thead>
                     <tbody>
                       <tr>
-                        <td>{account.address}</td>
-                        <td>{account.city}</td>
-                        <td>{account.state}</td>
-                        <td>{account.zip_code}</td>
-                        <td>
+                        <td data-label="Address">{account.address}</td>
+                        <td data-label="City">{account.city}</td>
+                        <td data-label="State">{account.state}</td>
+                        <td data-label="Zip Code">{account.zip_code}</td>
+                        <td data-label="Rating">
                           {!!account.rating
                             ? `${account.rating}`
-                            : "No ranking"}
+                            : "No Rating"}
                         </td>
-                        <td>{formatDate(account.created_date)}</td>
+                        <td data-label="Created Date">{formatDate(account.created_date)}</td>
                       </tr>
                     </tbody>
                   </table>
