@@ -16,9 +16,10 @@ router.get("/",  (req, res) => {
 })
 
 router.get("/:id", async (req, res) => {
-    console.log('ID NUMBER', customer_id);
+    const { id } = req.params;
+    console.log('ID NUMBER', id);
     try {
-        const response = await data.find( customer => customer.id === customer_id);
+        const response = await data.find( customer => customer.id === parseInt(id));
         console.log(response)
         res.json(response).status(200);
 
@@ -26,7 +27,6 @@ router.get("/:id", async (req, res) => {
         console.error("ERROR: ",error);
         return error;
     }
-
 })
 
 module.exports = router;
