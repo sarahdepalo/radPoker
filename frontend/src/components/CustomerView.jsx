@@ -24,8 +24,8 @@ const CustomerView = () => {
 
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    navigate("customer-details", { customer_id: 2 });
+  const handleClick = (customerId) => {
+    navigate("customer-details", { state : customerId });
   };
 
   const formatDate = (inputDate) => {
@@ -69,7 +69,7 @@ const CustomerView = () => {
               </thead>
               <tbody>
                 {customerList.map((customer) => (
-                  <tr onClick={handleClick} key={customer.email}>
+                  <tr onClick={() => handleClick(customer.id)} key={customer.email}>
                     <td>
                       {customer.first_name} {customer.last_name}
                     </td>
@@ -87,32 +87,6 @@ const CustomerView = () => {
                     </td>
                   </tr>
                 ))}
-                <tr onClick={handleClick}>
-                  <td>Alfred Hitchcock</td>
-                  <td>alfred@emial.com</td>
-                  <td>January 01, 2020</td>
-                  <td>
-                    <span className="active">Online</span>
-                  </td>
-                  <td className="arrow">
-                    <FontAwesomeIcon icon={faAngleDoubleRight} />
-                  </td>
-                </tr>
-                <tr>
-                  <td>Alfred Two</td>
-                  <td>Hitchcock@email.com</td>
-                  <td>January 01, 2020</td>
-                  <td>
-                    <span className="active">Online</span>
-                  </td>
-                  <td className="arrow">
-                    {/* Add a link here for customerindex/customerid */}
-                    <FontAwesomeIcon
-                      icon={faAngleDoubleRight}
-                      aria-label="click to view more customer information"
-                    />
-                  </td>
-                </tr>
               </tbody>
             </table>
           </section>

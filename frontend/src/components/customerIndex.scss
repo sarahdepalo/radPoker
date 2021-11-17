@@ -1,0 +1,22 @@
+@import "../variables";
+
+.name-container {
+    h1 {
+        display: inline-block;
+        padding-right: 40px;
+        margin-top: 50px;
+    }
+}
+
+.customer-details {
+    width: 80%;
+    th {
+        width: 250px;
+        padding: 20px 15px 20px 0px;
+    }
+}
+
+.accounts {
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
