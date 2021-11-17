@@ -19,19 +19,21 @@
     color: #bababb;
 }
 
+// TABLE STYLES
+
 table {
     margin-top: 30px;
     width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
-  
 }
+
 tbody tr {
     cursor: pointer;
     &:hover {
         background-color:$main-content-hover;
         :nth-child(4) > span {
-            border: 2px solid $theme-primary;
+            border: 2px solid transparent;
         }
         :nth-child(5) > svg { 
             color: $theme-primary;
@@ -46,8 +48,9 @@ th {
 
 td {
     border-bottom: 2px solid $grey;
-    padding: 20px 0px;
+    padding: 20px 17px 20px 0px;
     color: $secondary-text;
+    word-break: break-word;
 }
 
 .active {
@@ -66,8 +69,51 @@ td {
     }
 }
 
+.offline {
+    border: 2px solid $grey;
+    padding: 10px;
+    border-radius:10px;
+    &:before {
+        background-color: $error;
+        border-radius: 1em;
+        content: " ";
+        display: inline-block;
+        height: 0.45em;
+        margin-right: 6px;
+        width: 0.45em;
+        margin-bottom: 2px;
+    }
+}
+
 .arrow {
     text-align: end;
     padding-right: 5px;
     color: $theme-secondary;
+}
+
+// MEDIA QUERIES
+@media screen and (max-width: 960px) {
+    table {
+        margin-top: 15px;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+
+    thead tr {
+        position: absolute;
+        top: -9999px;
+		left: -9999px;
+    }
+
+    tbody tr {
+        margin-bottom: 20px;
+
+        :nth-child(5){
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+    }
 }
