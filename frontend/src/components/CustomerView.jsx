@@ -13,8 +13,8 @@ const CustomerView = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const localUrl = "http://localhost:3000/customers";
-      const response = await fetch(localUrl).then((response) =>
+      const url = "https://radpoker.herokuapp.com/customers";
+      const response = await fetch(url).then((response) =>
         response.json()
       );
       console.log(response);

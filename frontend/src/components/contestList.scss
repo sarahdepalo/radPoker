@@ -22,6 +22,15 @@
       width: 1px;
     }
 
+    tbody {
+      td:nth-child(odd) {
+        background-color: $main-content-hover;
+      }
+      tr:nth-child(odd) {
+        background-color: white;
+      }
+    }
+
     table {
       tr,
       td {

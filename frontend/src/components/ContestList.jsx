@@ -6,8 +6,8 @@ const ContestList = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const localUrl = `http://localhost:3000/contests`;
-      const response = await fetch(localUrl).then((response) =>
+      const url = `https://radpoker.herokuapp.com/contests`;
+      const response = await fetch(url).then((response) =>
         response.json()
       );
       console.log(response);
