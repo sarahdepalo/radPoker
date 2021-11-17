@@ -25,6 +25,8 @@ server.listen(port, host, () => {
 
 const rootController = require('./routes/index');
 const customersController = require('./routes/customers');
+const contestsController = require('./routes/contests');
 
 app.use('/', rootController);
 app.use('/customers', customersController);
+app.use('/contests', contestsController);
