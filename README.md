@@ -1,6 +1,6 @@
 <h1 align="center">RadPoker Admin Panel Challenge</h1>
 <p align="center">
-  <a href="https://github.com/natelee3/interiorize-backend"><strong>View the Hosted Site »</strong></a>
+  <a href="https://radpoker.netlify.app/"><strong>View the Hosted Site »</strong></a>
 </p>
 
 Part of the challenge was to create a mock server. The mock API can be [viewed here](https://radpoker.herokuapp.com) and the endpoints are as follows.
