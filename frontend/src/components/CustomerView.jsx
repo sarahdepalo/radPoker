@@ -78,6 +78,7 @@ const CustomerView = () => {
               </thead>
               <tbody>
                 {customerList
+                // eslint-disable-next-line
                   .filter((val) => {
                     if (searchInput === "") {
                       return val;
