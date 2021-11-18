@@ -44,7 +44,11 @@
       position: absolute;
       width: 1px;
     }
-
+    tbody {
+      tr {
+        margin-bottom: 40px;
+      }
+    }
     table {
       tr,
       td {

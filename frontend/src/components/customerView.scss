@@ -114,8 +114,11 @@ td {
   }
   .customer-list {
     tbody tr {
-      margin-bottom: 20px;
-  
+      margin-bottom: 40px;
+      :nth-child(1) {
+        color: $theme-primary;
+        font-weight: bold;
+      }
       :nth-child(5) {
         position: absolute;
         top: -9999px;
