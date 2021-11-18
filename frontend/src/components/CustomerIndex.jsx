@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import spinner from "./images/spinner.gif";
 import "./customerIndex.scss";
@@ -110,6 +110,7 @@ const CustomerIndex = () => {
                 ))}
               </>
             )}
+            <Link to="/" className="btn">Go Back</Link>
           </section>
         ) : (
           <p>Loading accounts...</p>

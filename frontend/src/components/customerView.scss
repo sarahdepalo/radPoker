@@ -112,14 +112,16 @@ td {
     top: -9999px;
     left: -9999px;
   }
-
-  tbody tr {
-    margin-bottom: 20px;
-
-    :nth-child(5) {
-      position: absolute;
-      top: -9999px;
-      left: -9999px;
+  .customer-list {
+    tbody tr {
+      margin-bottom: 20px;
+  
+      :nth-child(5) {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+      }
     }
   }
+  
 }

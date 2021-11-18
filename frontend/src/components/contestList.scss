@@ -36,15 +36,6 @@
       td {
         display: block;
       }
-      td {
-        &:before {
-          content: attr(data-label);
-          white-space: pre-wrap;
-          display: block;
-          font-weight: bold;
-          color: $theme-primary;
-        }
-      }
     }
   }
 }

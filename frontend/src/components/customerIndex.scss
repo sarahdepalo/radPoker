@@ -53,7 +53,7 @@
       td {
         &:before {
           content: attr(data-label);
-          white-space: pre-wrap;
+          white-space: nowrap;
           display: block;
           font-weight: bold;
           color: $theme-primary;
