@@ -11,9 +11,7 @@ const CustomerIndex = () => {
   useEffect(() => {
     const getData = async () => {
       const url = `https://radpoker.herokuapp.com/customers/${state}`;
-      const response = await fetch(url).then((response) =>
-        response.json()
-      );
+      const response = await fetch(url).then((response) => response.json());
       console.log(response);
       setCustomerInfo(response.customer);
       setAccountInfo(response.accounts);
@@ -71,7 +69,11 @@ const CustomerIndex = () => {
             </table>
           </section>
         ) : (
-          <img src={spinner} className="spinner" alt="loading customer information..."/>
+          <img
+            src={spinner}
+            className="spinner"
+            alt="loading customer information..."
+          />
         )}
         {accountInfo !== null ? (
           <section className="accounts">
@@ -99,18 +101,20 @@ const CustomerIndex = () => {
                         <td data-label="State">{account.state}</td>
                         <td data-label="Zip Code">{account.zip_code}</td>
                         <td data-label="Rating">
-                          {!!account.rating
-                            ? `${account.rating}`
-                            : "No Rating"}
+                          {!!account.rating ? `${account.rating}` : "No Rating"}
                         </td>
-                        <td data-label="Created Date">{formatDate(account.created_date)}</td>
+                        <td data-label="Created Date">
+                          {formatDate(account.created_date)}
+                        </td>
                       </tr>
                     </tbody>
                   </table>
                 ))}
               </>
             )}
-            <Link to="/" className="btn">Go Back</Link>
+            <Link to="/" className="btn">
+              Go Back
+            </Link>
           </section>
         ) : (
           <p>Loading accounts...</p>

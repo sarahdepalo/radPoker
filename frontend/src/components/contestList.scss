@@ -1,17 +1,17 @@
 @import "../variables";
 
 .contests {
-    margin-bottom: 50px;
-    tbody  {
-        tr:nth-child(odd) {
-            background-color: $main-content-hover;
-        }
+  margin-bottom: 50px;
+  tbody {
+    tr:nth-child(odd) {
+      background-color: $main-content-hover;
     }
+  }
 }
 
 @media screen and (max-width: 960px) {
   .contests {
-     thead {
+    thead {
       border: none;
       clip: rect(0 0 0 0);
       height: 1px;

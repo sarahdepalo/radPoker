@@ -15,9 +15,7 @@ const CustomerView = () => {
   useEffect(() => {
     const getData = async () => {
       const url = "https://radpoker.herokuapp.com/customers";
-      const response = await fetch(url).then((response) =>
-        response.json()
-      );
+      const response = await fetch(url).then((response) => response.json());
       console.log(response);
       setCustomerList(response.customers);
     };
@@ -79,15 +77,16 @@ const CustomerView = () => {
               </thead>
               <tbody>
                 {customerList
-                // eslint-disable-next-line
+                  // eslint-disable-next-line
                   .filter((val) => {
                     if (searchInput === "") {
                       return val;
                     } else if (
                       val.first_name
                         .toLowerCase()
-                        .includes(searchInput.toLowerCase())){
-                        return val
+                        .includes(searchInput.toLowerCase())
+                    ) {
+                      return val;
                     }
                   })
                   .map((customer) => (
@@ -119,7 +118,7 @@ const CustomerView = () => {
           </section>
         </main>
       ) : (
-        <img src={spinner} className="spinner" alt="loading customers..."/>
+        <img src={spinner} className="spinner" alt="loading customers..." />
       )}
     </>
   );
