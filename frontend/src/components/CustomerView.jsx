@@ -5,6 +5,7 @@ import {
   faAngleDoubleRight,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
+import spinner from "./images/spinner.gif";
 import "./customerView.scss";
 
 const CustomerView = () => {
@@ -118,7 +119,7 @@ const CustomerView = () => {
           </section>
         </main>
       ) : (
-        <p>Loading Customers...</p>
+        <img src={spinner} className="spinner" alt="loading customers..."/>
       )}
     </>
   );

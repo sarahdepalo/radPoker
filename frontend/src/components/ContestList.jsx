@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import spinner from "./images/spinner.gif";
 import "./contestList.scss";
 
 const ContestList = () => {
@@ -41,7 +42,7 @@ const ContestList = () => {
               </table>
           </section>
         ) : (
-          <p>Loading contest information...</p>
+          <img src={spinner} className="spinner" alt="loading contests..."/>
         )}
       </main>
     </>

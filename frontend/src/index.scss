@@ -67,7 +67,14 @@ nav {
 
 }
 
-
+.spinner {
+  height: 100px;
+  width: 100px;
+  margin-top: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 // Font Sizing for different screen sizes
 @media screen and (min-width: 320px) {

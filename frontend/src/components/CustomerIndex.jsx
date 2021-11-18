@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import spinner from "./images/spinner.gif";
 import "./customerIndex.scss";
 
 const CustomerIndex = () => {
@@ -70,7 +71,7 @@ const CustomerIndex = () => {
             </table>
           </section>
         ) : (
-          <p>Loading details...</p>
+          <img src={spinner} className="spinner" alt="loading customer information..."/>
         )}
         {accountInfo !== null ? (
           <section className="accounts">
