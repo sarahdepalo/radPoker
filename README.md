@@ -1,4 +1,4 @@
-<h1 align="center">RadPoker Admin Panel Challenge</h1>
+<h1 align="center">♦️ RadPoker Admin Panel Challenge ♦️</h1>
 <p align="center">
   <a href="https://radpoker.netlify.app/"><strong>View the Hosted Site »</strong></a>
 </p>
