@@ -25,5 +25,5 @@ Returns each contests with an additional array of objects called contestInfo tha
 
 ### Goals
 
-* If given more time, I would have liked to improve the search function to filter by more than just first name. 
+* ✅   ~~If given more time, I would have liked to improve the search function to filter by more than just first name.~~
 * I would have also liked to include more information on the contests page. Maybe how many players are actively online in addition to other information that might be helpful to know about contests such as prize money or duration. 
