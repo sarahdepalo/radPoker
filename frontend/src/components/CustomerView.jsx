@@ -77,17 +77,17 @@ const CustomerView = () => {
               </thead>
               <tbody>
                 {customerList
-                  // eslint-disable-next-line
                   .filter((val) => {
                     if (searchInput === "") {
                       return val;
                     } else if (
                       val.first_name
                         .toLowerCase()
-                        .includes(searchInput.toLowerCase())
-                    ) {
-                      return val;
-                    }
+                        .includes(searchInput.toLowerCase()) ||
+                      val.last_name.toLowerCase().includes(searchInput.toLowerCase()) ||
+                      val.email.toLowerCase().includes(searchInput.toLowerCase())
+                    ) 
+                    return val;
                   })
                   .map((customer) => (
                     <tr
